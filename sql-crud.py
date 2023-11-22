@@ -42,14 +42,70 @@ ada_lovelace = Programmer(
     famous_for="First Programmer"
 )
 
+alan_turing = Programmer(
+    first_name="Alan",
+    last_name="Turing",
+    gender="M",
+    nationality="British",
+    famous_for="Modern Computing"
+)
+
+grace_hopper = Programmer(
+    first_name="Groce",
+    last_name="Hopper",
+    gender="F",
+    nationality="American",
+    famous_for="COBOL language"
+)
+
+margaret_hamilton = Programmer(
+    first_name="Margaret",
+    last_name="Hamilton",
+    gender="F",
+    nationality="American",
+    famous_for="Apollo 11"
+)
+
+bill_gastes = Programmer(
+    first_name="Bill",
+    last_name="Gates",
+    gender="M",
+    nationality="American",
+    famous_for="Microsoft"
+)
+
+tim_burners_lee = Programmer(
+    first_name="Tim",
+    last_name="Burners-Lee",
+    gender="M",
+    nationality="British",
+    famous_for="World Wide Web"
+)
+
+mihaly_lovrencsics = Programmer(
+    first_name="Mihaly",
+    last_name="Lovrencsics",
+    gender="M",
+    nationality="Hungarian",
+    famous_for="AI based programming language"
+)
+
 # add each instance of our programmers to our session
-session.add(ada_lovelace)
+# session.add(ada_lovelace)
+# session.add(alan_turing)
+# session.add(grace_hopper)
+# session.add(margaret_hamilton)
+# session.add(bill_gastes)
+# session.add(tim_burners_lee)
+session.add(mihaly_lovrencsics)
+
+
 
 # commit our session to the database
 session.commit()
 
 # query the database to find all Programmers
-programmers = session.query(Programmer)
+programmers= session.query(Programmer)
 for programmer in programmers:
     print(
         programmer.Id,
@@ -57,5 +113,5 @@ for programmer in programmers:
         programmer.gender,
         programmer.nationality,
         programmer.famous_for,
-        sep=" | "
+        sep = " | "
     )
